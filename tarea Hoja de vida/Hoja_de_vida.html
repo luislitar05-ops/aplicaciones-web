@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html lang="es"> <!-- Define que el idioma de la página es español -->
+<head>
+  <meta charset="UTF-8"> <!-- Establece la codificación de caracteres a UTF-8 -->
+  <title>Hoja de Vida - Luis Litardo</title> <!-- Título que aparece en la pestaña del navegador -->
+
+  <style>
+    /* Estilos generales del body */
+    body {
+      font-family: Arial, sans-serif; /* Fuente del texto */
+      background-color: #f4f6f9; /* Color de fondo de la página */
+      margin: 0; /* Elimina margen por defecto */
+      padding: 0; /* Elimina padding por defecto */
+    }
+
+    /* Contenedor principal */
+    .contenedor {
+      width: 80%; /* Ancho del contenedor */
+      margin: 20px auto; /* Centra el contenedor y agrega margen superior e inferior */
+      background: white; /* Fondo blanco */
+      padding: 20px; /* Espaciado interno */
+      border-radius: 10px; /* Bordes redondeados */
+      box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Sombra para dar efecto de profundidad */
+    }
+
+    /* Estilos para títulos */
+    h1, h2 {
+      color: #333; /* Color del texto */
+      border-bottom: 2px solid #ddd; /* Línea debajo del título */
+      padding-bottom: 5px; /* Espacio entre el texto y la línea */
+    }
+
+    /* Sección de datos personales (foto y texto) */
+    .datos {
+      display: flex; /* Permite que la imagen y el texto estén en línea */
+      align-items: center; /* Centra verticalmente los elementos */
+      margin-bottom: 20px; /* Espacio debajo de la sección */
+    }
+
+    /* Estilo de la foto */
+    .datos img {
+      width: 150px; /* Ancho de la imagen */
+      height: 150px; /* Alto de la imagen */
+      border-radius: 50%; /* Hace la imagen circular */
+      margin-right: 20px; /* Espacio entre la imagen y el texto */
+    }
+
+    /* Estilos para la tabla de referencias */
+    table {
+      width: 100%; /* Ocupa todo el ancho del contenedor */
+      border-collapse: collapse; /* Elimina espacio entre bordes de celdas */
+      margin-top: 10px; /* Espacio arriba de la tabla */
+    }
+
+    table, th, td {
+      border: 1px solid #999; /* Bordes de la tabla, encabezados y celdas */
+    }
+
+    th, td {
+      padding: 8px; /* Espaciado interno de celdas */
+      text-align: left; /* Alineación de texto a la izquierda */
+    }
+
+    th {
+      background: #f2f2f2; /* Fondo de los encabezados de tabla */
+    }
+  </style>
+</head>
+<body>
+  <div class="contenedor"> <!-- Contenedor principal de la hoja de vida -->
+
+    <!-- Datos Personales -->
+    <div class="datos">
+      <img src="foto.jpg" alt="Foto de Luis Litardo"> <!-- Imagen de perfil -->
+      <div>
+        <h1>Luis Antonio Litardo Hernandez</h1> <!-- Nombre completo -->
+        <p><strong>Dirección:</strong> Via Manta - Jaramijo</p>
+        <p><strong>Teléfono:</strong> 0999398938</p>
+        <p><strong>Correo:</strong> luislitar.05@gmail.com</p>
+      </div>
+    </div>
+
+    <!-- Estudios -->
+    <div>
+      <h2>Estudios Realizados</h2>
+      <ul> <!-- Lista de estudios -->
+        <li>Escuela Ramon Virgilio Azua - Educación Básica </li>
+        <li>Unidad educativa Fiscal Tarqui Siglo XXI- Basica Superior y Bachillerato </li>
+      </ul>
+    </div>
+
+    <!-- Experiencia Laboral -->
+    <div>
+      <h2>Experiencia Laboral</h2>
+      <li>Recepcionista </li>
+      <p>Encargado de la atención al cliente, coordinación de citas y manejo de facturación.  </p>
+      <li>Asistente Administrativo</li>
+      <p>Apoyo en la gestión de documentos, control de inventarios y organización de eventos internos. Contribuí a optimizar los procesos administrativos y la comunicación entre departamentos</p>
+    </div>
+
+    <!-- Capacitaciones -->
+    <div>
+      <h2>Capacitaciones</h2>
+      <li>Curso de Excel Básico</li>
+      <p>Manejo funciones básicas, lo que me permitió organizar información de manera eficiente y elaborar reportes claros y precisos.</p>
+      <li>Inglés Básico</li>
+      <p>Desarrollé habilidades en comprensión lectora, vocabulario y expresión básica, facilitando la comunicación en situaciones cotidianas en inglés.</p>
+    </div>
+
+    <!-- Referencias Personales -->
+    <div>
+      <h2>Referencias Personales</h2>
+      <table>
+        <tr>
+          <th>Nombre</th>
+          <th>Cargo/Profesión</th>
+          <th>Teléfono</th>
+          <th>Correo electrónico</th>
+        </tr>
+        <tr>
+          <td>Luis Litardo</td>
+          <td>Ingeniero en Tecnologias de la Informacion</td>
+          <td>0999398938</td>
+          <td>luislitar.05@gmail.com</td>
+        </tr>
+      </table>
+    </div>
+
+  </div>
+</body>
+</html>
