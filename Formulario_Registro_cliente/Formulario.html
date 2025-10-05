@@ -1,0 +1,41 @@
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulario</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="contenedor">
+    <h2>Formulario de Registro</h2>
+    <form action="#" method="post" name="formValidado" onsubmit="return validar()">
+
+      <label for="dni">DNI:</label>
+      <input type="text" id="dni" placeholder="Ingrese su DNI">
+
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" placeholder="Ingrese su nombre">
+
+      <label for="apellido">Apellido:</label>
+      <input type="text" id="apellido" placeholder="Ingrese su apellido">
+
+      <label for="sexo">Sexo:</label>
+      <select id="sexo">
+        <option value="">Seleccione...</option>
+        <option value="Masculino">Masculino</option>
+        <option value="Femenino">Femenino</option>
+        <option value="Otro">Otro</option>
+      </select>
+
+      <label for="correo">Correo:</label>
+      <input type="text" id="correo" placeholder="ejemplo@correo.com">
+
+      <label for="telefono">Teléfono:</label>
+      <input type="text" id="telefono" placeholder="Ingrese su teléfono">
+
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+
+  <script src="Validar.js"></script>
+</body>
+</html>
