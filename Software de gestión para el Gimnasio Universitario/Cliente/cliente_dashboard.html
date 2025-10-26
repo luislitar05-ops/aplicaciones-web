@@ -1,0 +1,125 @@
+
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Principal - Gimnasio ULEAM</title>
+    <link rel="stylesheet" href="CSS/cliente_dashboard.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-container">
+      
+        <!-- Header -->
+        <header class="dashboard-header">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>Gimnasio ULEAM</h1>
+                    <p>Universidad Laica Eloy Alfaro de Manabí</p>
+                </div>
+                <div class="user-info">
+                    <div class="user-avatar">
+                        <span class="material-icons">account_circle</span>
+                    </div>
+                    <div class="user-details">
+                        <span class="user-name">Juan Pérez</span>
+                        <span class="user-status">Cliente Premium</span>
+                    </div>
+                    <a href="../login/login.html" class="logout-btn" title="Cerrar sesión">
+                        <span class="material-icons">logout</span>
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Contenido Principal -->
+        <main class="dashboard-main">
+            <div class="content-layout">
+                <!-- Panel de Bienvenida -->
+                <div class="welcome-section">
+                    <div class="welcome-content">
+                        <h2>Bienvenido de vuelta, <span class="highlight">Juan</span></h2>
+                        <p class="welcome-text">Estamos aquí para ayudarte a alcanzar tus metas fitness. 
+                           Gestiona tus reservas, consulta tu membresía y actualiza tu perfil.</p>
+                        
+                        <div class="quick-stats">
+                            <div class="stat-item">
+                                <span class="stat-number">12</span>
+                                <span class="stat-label">Clases este mes</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">95%</span>
+                                <span class="stat-label">Asistencia</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">3</span>
+                                <span class="stat-label">Próximas clases</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Panel de Opciones -->
+                <div class="options-section">
+                    <h3 class="options-title">Accesos Directos</h3>
+                    
+                    <div class="options-grid">
+
+                        <!-- Tarjeta de Perfil -->
+                        <a href="Perfil_cliente.html" class="option-card">
+                            <div class="card-header">
+                                <div class="card-icon">
+                                    <span class="material-icons">person</span>
+                                </div>
+                                <h4>Mi Perfil</h4>
+                            </div>
+                            <div class="card-content">
+                                <p>Gestiona tu información personal, preferencias y configuración de cuenta</p>
+                            </div>
+                            <div class="card-footer">
+                                <span class="card-action">Ver perfil</span>
+                                <span class="material-icons arrow-icon">arrow_forward</span>
+                            </div>
+                        </a>
+
+                        <!-- Tarjeta de Agendar Clases -->
+                        <a href="agendar_clase.html" class="option-card">
+                            <div class="card-header">
+                                <div class="card-icon">
+                                    <span class="material-icons">calendar_today</span>
+                                </div>
+                                <h4>Agendar Clases</h4>
+                            </div>
+                            <div class="card-content">
+                                <p>Reserva tus clases grupales, consulta horarios y gestiona tus reservas activas</p>
+                            </div>
+                            <div class="card-footer">
+                                <span class="card-action">Agendar ahora</span>
+                                <span class="material-icons arrow-icon">arrow_forward</span>
+                            </div>
+                        </a>
+
+                        <!-- Tarjeta de Membresía -->
+                        <a href="cliente_membresia.html" class="option-card">
+                            <div class="card-header">
+                                <div class="card-icon">
+                                    <span class="material-icons">card_membership</span>
+                                </div>
+                                <h4>Mi Membresía</h4>
+                            </div>
+                            <div class="card-content">
+                                <p>Consulta el estado de tu membresía, fechas de vencimiento y beneficios disponibles</p>
+                            </div>
+                            <div class="card-footer">
+                                <span class="card-action">Ver detalles</span>
+                                <span class="material-icons arrow-icon">arrow_forward</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

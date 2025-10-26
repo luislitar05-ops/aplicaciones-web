@@ -1,0 +1,198 @@
+
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión de Usuarios - Gimnasio Universitario</title>
+  <link rel="stylesheet" href="CSS/administrar_usuarios.css">
+</head>
+<body>
+  <header class="encabezado">
+    <h1>Gimnasio ULEAM</h1>
+    <div class="usuario-info">Universidad Laica Eloy Alfaro de Manabí</div>
+  </header>
+
+  <main class="contenido">
+    <section class="titulo-seccion">
+      <h2>Gestión de Usuarios</h2>
+    </section>
+
+    <!-- Formulario para Agregar Usuario (SIEMPRE VISIBLE) -->
+    <div class="formulario-agregar">
+      <h3>Agregar Nuevo Usuario</h3>
+      <form>
+        <!-- Fila 1: Tipo y Nombre -->
+        <div class="form-fila">
+          <div class="input-group">
+            <label for="tipo">Tipo de Usuario *</label>
+            <select id="tipo" name="tipo" required>
+              <option value="">Seleccionar tipo</option>
+              <option value="cliente">Cliente</option>
+              <option value="entrenador">Entrenador</option>
+            </select>
+          </div>
+          <div class="input-group">
+            <label for="nombres">Nombres *</label>
+            <input type="text" id="nombres" name="nombres" required>
+          </div>
+          <div class="input-group">
+            <label for="apellidos">Apellidos *</label>
+            <input type="text" id="apellidos" name="apellidos" required>
+          </div>
+        </div>
+
+        <!-- Fila 2: Cédula, Teléfono y Email -->
+        <div class="form-fila">
+          <div class="input-group">
+            <label for="cedula">Cédula *</label>
+            <input type="text" id="cedula" name="cedula" required>
+          </div>
+          <div class="input-group">
+            <label for="telefono">Teléfono *</label>
+            <input type="tel" id="telefono" name="telefono" required>
+          </div>
+          <div class="input-group">
+            <label for="email">Correo Electrónico *</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+        </div>
+
+        <!-- Fila 3: Fecha Nacimiento, Género y Membresía -->
+        <div class="form-fila">
+          <div class="input-group">
+            <label for="fechaNacimiento">Fecha de Nacimiento</label>
+            <input type="date" id="fechaNacimiento" name="fechaNacimiento">
+          </div>
+          <div class="input-group">
+            <label for="genero">Género</label>
+            <select id="genero" name="genero">
+              <option value="">Seleccionar</option>
+              <option value="M">Masculino</option>
+              <option value="F">Femenino</option>
+              <option value="O">Otro</option>
+            </select>
+          </div>
+          <div class="input-group">
+            <label for="membresia">Tipo de Membresía</label>
+            <select id="membresia" name="membresia">
+              <option value="">Seleccionar membresía</option>
+              <option value="1">Básica ($25/mes)</option>
+              <option value="2">Premium ($70/3 meses)</option>
+              <option value="3">VIP ($250/año)</option>
+              <option value="0">Sin membresía</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Fila 4: Dirección -->
+        <div class="form-fila">
+          <div class="input-group direccion-completa">
+            <label for="direccion">Dirección</label>
+            <input type="text" id="direccion" name="direccion">
+          </div>
+        </div>
+
+        <!-- Fila 5: Observaciones -->
+        <div class="form-fila">
+          <div class="input-group observaciones">
+            <label for="observaciones">Observaciones / Especialidad</label>
+            <textarea id="observaciones" name="observaciones" rows="3" placeholder="Para clientes: condiciones médicas. Para entrenadores: especialidad"></textarea>
+          </div>
+        </div>
+        
+        <div class="botones-formulario">
+          <button type="submit" class="btn-guardar">Guardar Usuario</button>
+          <button type="reset" class="btn-cancelar">Limpiar Formulario</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- BUSCADOR ENCIMA DE LA TABLA -->
+    <div class="buscador-tabla">
+      <div class="input-group">
+        <label for="buscar-tabla">Buscar usuario por cédula o nombre:</label>
+        <input type="text" id="buscar-tabla" name="buscar-tabla" placeholder="Ejemplo: 1314256789 o Juan Pérez">
+      </div>
+      <button class="btn-consultar">Consultar</button>
+    </div>
+
+    <!-- Tabla de Usuarios -->
+    <section class="tabla-container">
+      <table class="tabla-usuarios">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Tipo</th>
+            <th>Nombres</th>
+            <th>Apellidos</th>
+            <th>Cédula</th>
+            <th>Teléfono</th>
+            <th>Correo</th>
+            <th>Membresía</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>01</td>
+            <td><span class="badge cliente">Cliente</span></td>
+            <td>Juan</td>
+            <td>Pérez</td>
+            <td>1314256789</td>
+            <td>0997654321</td>
+            <td>juanperez@mail.com</td>
+            <td>Básica</td>
+            <td>
+              <a href="#" class="editar">Editar</a> |
+              <a href="#" class="eliminar">Eliminar</a>
+            </td>
+          </tr>
+          <tr>
+            <td>02</td>
+            <td><span class="badge entrenador">Entrenador</span></td>
+            <td>María</td>
+            <td>Gómez</td>
+            <td>1314267890</td>
+            <td>0987654321</td>
+            <td>mariagomez@mail.com</td>
+            <td>-</td>
+            <td>
+              <a href="#" class="editar">Editar</a> |
+              <a href="#" class="eliminar">Eliminar</a>
+            </td>
+          </tr>
+          <tr>
+            <td>03</td>
+            <td><span class="badge cliente">Cliente</span></td>
+            <td>Carlos</td>
+            <td>Ruiz</td>
+            <td>1314278901</td>
+            <td>0991234567</td>
+            <td>carlosruiz@mail.com</td>
+            <td>VIP</td>
+            <td>
+              <a href="#" class="editar">Editar</a> |
+              <a href="#" class="eliminar">Eliminar</a>
+            </td>
+          </tr>
+          <tr>
+            <td>04</td>
+            <td><span class="badge entrenador">Entrenador</span></td>
+            <td>Luis</td>
+            <td>Torres</td>
+            <td>1314289012</td>
+            <td>0982345678</td>
+            <td>luistorres@mail.com</td>
+            <td>-</td>
+            <td>
+              <a href="#" class="editar">Editar</a> |
+              <a href="#" class="eliminar">Eliminar</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+  <script src="VALIDACION/Adminitrar_usuario.js"></script>
+</body>
+</html>

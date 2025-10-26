@@ -1,0 +1,192 @@
+
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración - Gimnasio ULEAM</title>
+    <link rel="stylesheet" href="CSS/Dashboard.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Header -->
+        <header class="dashboard-header">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>Gimnasio ULEAM</h1>
+                    <p>Panel de Administración</p>
+                </div>
+                <div class="user-info">
+                    <div class="user-avatar">
+                        <span class="material-icons">admin_panel_settings</span>
+                    </div>
+                    <div class="user-details">
+                        <span class="user-name">Administrador</span>
+                        <span class="user-status">Super Usuario</span>
+                    </div>
+                    <a href="../login/login.html" class="logout-btn" title="Cerrar sesión">
+                        <span class="material-icons">logout</span>
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Contenido Principal -->
+        <main class="dashboard-main">
+            <div class="content-layout">
+                <!-- Panel de Bienvenida -->
+                <div class="welcome-section">
+                    <div class="welcome-content">
+                        <h2>Bienvenido, <span class="highlight">Administrador</span></h2>
+                        <p class="welcome-text">Desde aquí puedes gestionar todos los aspectos del gimnasio. 
+                           Controla usuarios, membresías, inventario y más.</p>
+                        
+                        <div class="quick-stats">
+                            <div class="stat-item">
+                                <span class="stat-number">1,248</span>
+                                <span class="stat-label">Usuarios Activos</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">342</span>
+                                <span class="stat-label">Asistencias Hoy</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">$12,458</span>
+                                <span class="stat-label">Ingresos Mes</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Panel de Opciones -->
+                <div class="options-section">
+                    <h3 class="options-title">Módulos de Administración</h3>
+                    
+                    <div class="pti-gridoons">
+                        <!-- Gestión de Usuarios -->
+                        <a href="administrar_usuarios..html" class="option-card">
+                            <div class="card-header">
+                                <div class="card-icon">
+                                    <span class="material-icons">manage_accounts</span>
+                                </div>
+                                <h4>Gestión de Usuarios</h4>
+                            </div>
+                            <div class="card-content">
+                                <p>Administra usuarios, permisos y roles del sistema. Crea, edita y gestiona cuentas de clientes y empleados.</p>
+                            </div>
+                            <div class="card-footer">
+                                <span class="card-action">Gestionar usuarios</span>
+                                <span class="material-icons arrow-icon">arrow_forward</span>
+                            </div>
+                        </a>
+
+                        <!-- Control de Asistencia -->
+                        <a href="Control_asistencia.html" class="option-card">
+                            <div class="card-header">
+                                <div class="card-icon">
+                                    <span class="material-icons">fact_check</span>
+                                </div>
+                                <h4>Control de Asistencia</h4>
+                            </div>
+                            <div class="card-content">
+                                <p>Monitorea y gestiona la asistencia de clientes. Consulta registros, reportes y estadísticas de frecuencia.</p>
+                            </div>
+                            <div class="card-footer">
+                                <span class="card-action">Ver asistencia</span>
+                                <span class="material-icons arrow-icon">arrow_forward</span>
+                            </div>
+                        </a>
+
+                        <!-- Gestión de Inventario -->
+                        <a href="Gestion_inventario.html" class="option-card">
+                            <div class="card-header">
+                                <div class="card-icon">
+                                    <span class="material-icons">inventory</span>
+                                </div>
+                                <h4>Gestión de Inventario</h4>
+                            </div>
+                            <div class="card-content">
+                                <p>Controla el stock de productos y equipamiento. Gestiona proveedores y recibe alertas de stock bajo.</p>
+                            </div>
+                            <div class="card-footer">
+                                <span class="card-action">Controlar inventario</span>
+                                <span class="material-icons arrow-icon">arrow_forward</span>
+                            </div>
+                        </a>
+
+                        <!-- Gestión de Membresías -->
+                        <a href="Gestion_membresias.html" class="option-card">
+                            <div class="card-header">
+                                <div class="card-icon">
+                                    <span class="material-icons">card_membership</span>
+                                </div>
+                                <h4>Gestión de Membresías</h4>
+                            </div>
+                            <div class="card-content">
+                                <p>Administra planes, precios y estados de membresías. Controla pagos, renovaciones y beneficios.</p>
+                            </div>
+                            <div class="card-footer">
+                                <span class="card-action">Administrar membresías</span>
+                                <span class="material-icons arrow-icon">arrow_forward</span>
+                            </div>
+                        </a>
+
+                        <!-- Gestión de Clases -->
+                        <a href="Gestion_clase.html" class="option-card">
+                            <div class="card-header">
+                                <div class="card-icon">
+                                    <span class="material-icons">fitness_center</span>
+                                </div>
+                                <h4>Gestión de Clases</h4>
+                            </div>
+                            <div class="card-content">
+                                <p>Organiza y supervisa las clases del gimnasio. Gestiona horarios, instructores y capacidad.</p>
+                            </div>
+                            <div class="card-footer">
+                                <span class="card-action">Gestionar clases</span>
+                                <span class="material-icons arrow-icon">arrow_forward</span>
+                            </div>
+                        </a>
+
+                        <!-- Gestión de Pagos -->
+                        <a href="Pagos.html" class="option-card">
+                            <div class="card-header">
+                                <div class="card-icon">
+                                    <span class="material-icons">payments</span>
+                                </div>
+                                <h4>Gestión de Pagos</h4>
+                            </div>
+                            <div class="card-content">
+                                <p>Administra transacciones, facturación y estados de pago. Controla ingresos y genera recibos.</p>
+                            </div>
+                            <div class="card-footer">
+                                <span class="card-action">Gestionar pagos</span>
+                                <span class="material-icons arrow-icon">arrow_forward</span>
+                            </div>
+                        </a>
+
+                        <!-- Notificaciones y Comunicados -->
+                        <a href="Notificacion_comunicados.html" class="option-card">
+                            <div class="card-header">
+                                <div class="card-icon">
+                                    <span class="material-icons">campaign</span>
+                                </div>
+                                <h4>Notificaciones y Comunicados</h4>
+                            </div>
+                            <div class="card-content">
+                                <p>Gestiona envío de notificaciones, anuncios y comunicados a los usuarios del sistema.</p>
+                            </div>
+                            <div class="card-footer">
+                                <span class="card-action">Enviar notificaciones</span>
+                                <span class="material-icons arrow-icon">arrow_forward</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

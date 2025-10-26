@@ -1,0 +1,511 @@
+/* ====== ESTILOS GENERALES ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #f4f4f4;
+  color: #222;
+}
+
+/* ====== ENCABEZADO ====== */
+.encabezado {
+  background: linear-gradient(90deg, #141e30, #243b55);
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 40px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+}
+
+.encabezado h1 {
+  font-size: 1.6rem;
+}
+
+.usuario-info {
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+.cerrar-sesion {
+  color: #ffcc00;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.cerrar-sesion:hover {
+  text-decoration: underline;
+}
+
+/* ====== CONTENIDO PRINCIPAL ====== */
+.contenido {
+  padding: 30px;
+  background: #f8f9fb;
+  min-height: calc(100vh - 80px);
+}
+
+/* ====== FILTROS ====== */
+.filtros-agenda {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 25px;
+}
+
+.filtros-superiores {
+  display: flex;
+  gap: 20px;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.filtros-superiores .input-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 200px;
+}
+
+.filtros-superiores .input-group label {
+  font-size: 0.9rem;
+  color: #243b55;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.filtros-superiores .input-group input,
+.filtros-superiores .input-group select {
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.3s;
+  width: 100%;
+  height: 42px;
+}
+
+.filtros-superiores .input-group input:focus,
+.filtros-superiores .input-group select:focus {
+  border-color: #ffcc00;
+  box-shadow: 0 0 5px rgba(255, 204, 0, 0.3);
+}
+
+.btn-buscar {
+  background: #ffcc00;
+  color: #1b2a41;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  height: 42px;
+  white-space: nowrap;
+  min-width: 120px;
+}
+
+.btn-buscar:hover {
+  background: #ffd633;
+  transform: scale(1.05);
+}
+
+/* ====== CONTENEDOR PRINCIPAL ====== */
+.contenedor-principal {
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  gap: 25px;
+}
+
+/* ====== CALENDARIO SEMANAL ====== */
+.seccion-calendario {
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.seccion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.seccion-header h2 {
+  color: #141e30;
+  font-size: 1.4rem;
+}
+
+.navegacion-semana {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.btn-semana {
+  background: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-semana:hover {
+  background: #ffcc00;
+  border-color: #ffcc00;
+}
+
+.semana-actual {
+  font-weight: 600;
+  color: #243b55;
+  min-width: 180px;
+  text-align: center;
+}
+
+/* ====== ESTRUCTURA CALENDARIO ====== */
+.calendario-semanal {
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.dias-semana {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  background: #243b55;
+  color: #fff;
+}
+
+.dia {
+  padding: 15px 10px;
+  text-align: center;
+  font-weight: 600;
+  border-right: 1px solid #344e75;
+}
+
+.dia:last-child {
+  border-right: none;
+}
+
+.horarios-clases {
+  display: flex;
+  flex-direction: column;
+}
+
+.franja-horaria {
+  display: grid;
+  grid-template-columns: 120px repeat(7, 1fr);
+  border-bottom: 1px solid #e9ecef;
+}
+
+.franja-horaria:last-child {
+  border-bottom: none;
+}
+
+.hora-label {
+  background: #f8f9fa;
+  padding: 15px 10px;
+  text-align: center;
+  font-weight: 600;
+  color: #243b55;
+  border-right: 1px solid #e9ecef;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clase-dia {
+  padding: 10px;
+  border-right: 1px solid #e9ecef;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 5px;
+}
+
+.clase-dia:last-child {
+  border-right: none;
+}
+
+.clase-dia.disponible {
+  background: #f0f9ff;
+  border-left: 4px solid #2196f3;
+}
+
+.tipo-clase {
+  font-weight: 600;
+  color: #141e30;
+  font-size: 0.9rem;
+}
+
+.instructor {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.cupos {
+  font-size: 0.75rem;
+  color: #388e3c;
+  font-weight: 600;
+}
+
+.btn-reservar {
+  background: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-top: 5px;
+}
+
+.btn-reservar:hover {
+  background: #218838;
+  transform: scale(1.05);
+}
+
+/* ====== PANEL LATERAL ====== */
+.panel-lateral {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* ====== SECCIONES DEL PANEL ====== */
+.seccion-reservas,
+.seccion-personalizados,
+.seccion-informacion {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.seccion-reservas .seccion-header,
+.seccion-personalizados .seccion-header,
+.seccion-informacion .seccion-header {
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.seccion-reservas h3,
+.seccion-personalizados h3,
+.seccion-informacion h3 {
+  color: #141e30;
+  font-size: 1.2rem;
+}
+
+/* ====== LISTA DE RESERVAS ====== */
+.lista-reservas {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.reserva-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #ffcc00;
+}
+
+.reserva-info h4 {
+  color: #141e30;
+  margin-bottom: 5px;
+  font-size: 1rem;
+}
+
+.reserva-info p {
+  color: #666;
+  font-size: 0.85rem;
+  margin-bottom: 3px;
+}
+
+.estado-reserva {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.estado-reserva.confirmada {
+  background: #e8f5e8;
+  color: #388e3c;
+}
+
+.estado-reserva.pendiente {
+  background: #fff3e0;
+  color: #f57c00;
+}
+
+.btn-cancelar {
+  background: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-cancelar:hover {
+  background: #c82333;
+}
+
+/* ====== INFORMACIÓN IMPORTANTE ====== */
+.lista-informacion {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  background: #f8f9fa;
+  border-radius: 6px;
+}
+
+.info-icono {
+  font-size: 1.2rem;
+  width: 30px;
+  text-align: center;
+}
+
+.info-item p {
+  color: #666;
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 1024px) {
+  .contenedor-principal {
+    grid-template-columns: 1fr;
+  }
+  
+  .panel-lateral {
+    order: -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .contenido {
+    padding: 20px;
+  }
+  
+  .encabezado {
+    padding: 15px 20px;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+  
+  .filtros-superiores {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .filtros-superiores .input-group {
+    min-width: 100%;
+  }
+  
+  .btn-buscar {
+    width: 100%;
+  }
+  
+  .seccion-header {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+  
+  .franja-horaria {
+    grid-template-columns: 80px repeat(7, 1fr);
+  }
+  
+  .hora-label {
+    font-size: 0.8rem;
+    padding: 10px 5px;
+  }
+  
+  .clase-dia {
+    padding: 5px;
+    min-height: 80px;
+  }
+  
+  .tipo-clase {
+    font-size: 0.8rem;
+  }
+  
+  .instructor,
+  .cupos {
+    font-size: 0.7rem;
+  }
+  
+  .reserva-item {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+  
+  .entrenador-item {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .contenido {
+    padding: 15px;
+  }
+  
+  .calendario-semanal {
+    font-size: 0.8rem;
+  }
+  
+  .dias-semana {
+    grid-template-columns: repeat(7, 1fr);
+  }
+  
+  .dia {
+    padding: 10px 5px;
+    font-size: 0.8rem;
+  }
+  
+  .franja-horaria {
+    grid-template-columns: 60px repeat(7, 1fr);
+  }
+  
+  .hora-label {
+    font-size: 0.7rem;
+    padding: 8px 3px;
+  }
+  
+  .clase-dia {
+    min-height: 70px;
+  }
+}

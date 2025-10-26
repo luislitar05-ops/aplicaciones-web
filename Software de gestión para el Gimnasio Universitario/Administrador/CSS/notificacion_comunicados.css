@@ -1,0 +1,558 @@
+/* ====== ESTILOS GENERALES ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #f4f4f4;
+  color: #222;
+}
+
+/* ====== ENCABEZADO ====== */
+.encabezado {
+  background: linear-gradient(90deg, #141e30, #243b55);
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 40px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+}
+
+.encabezado h1 {
+  font-size: 1.6rem;
+}
+
+.usuario-info {
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+/* ====== CONTENIDO PRINCIPAL ====== */
+.contenido {
+  padding: 30px;
+  background: #f8f9fb;
+  min-height: calc(100vh - 80px);
+}
+
+.titulo-seccion {
+  margin-bottom: 30px;
+}
+
+.titulo-seccion h2 {
+  font-size: 1.8rem;
+  color: #141e30;
+  border-left: 6px solid #ffcc00;
+  padding-left: 10px;
+}
+
+/* ====== FORMULARIO NOTIFICACIÓN ====== */
+.formulario-notificacion {
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  border-left: 4px solid #ffcc00;
+}
+
+.formulario-notificacion h3 {
+  color: #141e30;
+  margin-bottom: 25px;
+  font-size: 1.4rem;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 10px;
+}
+
+/* Secciones del formulario */
+.seccion-formulario {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.seccion-formulario:last-of-type {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.titulo-seccion-formulario {
+  color: #243b55;
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #ffcc00;
+  font-weight: 600;
+}
+
+.form-fila {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.form-fila .input-group {
+  flex: 1;
+  min-width: 200px;
+  position: relative;
+}
+
+.formulario-notificacion .input-group label {
+  font-size: 0.9rem;
+  color: #243b55;
+  margin-bottom: 8px;
+  font-weight: 600;
+  display: block;
+}
+
+.formulario-notificacion .input-group input,
+.formulario-notificacion .input-group select,
+.formulario-notificacion .input-group textarea {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.3s;
+  width: 100%;
+  height: 45px;
+}
+
+.formulario-notificacion .input-group textarea {
+  height: auto;
+  min-height: 120px;
+  resize: vertical;
+}
+
+.formulario-notificacion .input-group input:focus,
+.formulario-notificacion .input-group select:focus,
+.formulario-notificacion .input-group textarea:focus {
+  border-color: #ffcc00;
+  box-shadow: 0 0 5px rgba(255, 204, 0, 0.3);
+}
+
+/* Checkbox personalizado */
+.formulario-notificacion .input-group label[for="envio-inmediato"] {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-weight: normal;
+}
+
+.formulario-notificacion .input-group input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+}
+
+/* Texto de ayuda debajo de los campos */
+.hint {
+  display: block;
+  font-size: 0.75rem;
+  color: #666;
+  margin-top: 4px;
+  font-style: italic;
+}
+
+/* Campos que ocupan más espacio */
+.mensaje {
+  flex: 3 !important;
+  min-width: 100%;
+}
+
+.programacion {
+  flex: 2 !important;
+}
+
+/* Botones del formulario */
+.botones-formulario {
+  display: flex;
+  gap: 15px;
+  justify-content: flex-end;
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+.btn-enviar {
+  background: #28a745;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  height: 45px;
+  min-width: 180px;
+}
+
+.btn-enviar:hover {
+  background: #218838;
+  transform: translateY(-2px);
+}
+
+.btn-cancelar {
+  background: #6c757d;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  height: 45px;
+  min-width: 180px;
+}
+
+.btn-cancelar:hover {
+  background: #5a6268;
+  transform: translateY(-2px);
+}
+
+/* ====== BUSCADOR NOTIFICACIONES ====== */
+.buscador-tabla {
+  display: flex;
+  align-items: flex-end;
+  gap: 15px;
+  margin-bottom: 20px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid #243b55;
+  flex-wrap: wrap;
+}
+
+.buscador-tabla .input-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 200px;
+}
+
+.buscador-tabla .input-group label {
+  font-size: 0.95rem;
+  color: #243b55;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.buscador-tabla .input-group input,
+.buscador-tabla .input-group select {
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  outline: none;
+  transition: all 0.3s;
+  width: 100%;
+}
+
+.buscador-tabla .input-group input:focus,
+.buscador-tabla .input-group select:focus {
+  border-color: #ffcc00;
+  box-shadow: 0 0 5px rgba(255, 204, 0, 0.4);
+}
+
+.buscador-tabla .btn-consultar {
+  background: #ffcc00;
+  color: #1b2a41;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  height: 42px;
+  white-space: nowrap;
+  min-width: 120px;
+}
+
+.buscador-tabla .btn-consultar:hover {
+  background: #ffd633;
+  transform: scale(1.05);
+}
+
+/* ====== TABLA NOTIFICACIONES ====== */
+.tabla-notificaciones {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.tabla-notificaciones th {
+  background: #243b55;
+  color: #ffcc00;
+  padding: 12px;
+  text-align: left;
+  font-size: 15px;
+}
+
+.tabla-notificaciones td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+}
+
+.tabla-notificaciones tr:hover {
+  background-color: #fdf6d5;
+}
+
+/* ====== BADGES PARA TIPOS ====== */
+.badge {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.badge.recordatorio {
+  background: #e3f2fd;
+  color: #1976d2;
+  border: 1px solid #1976d2;
+}
+
+.badge.anuncio {
+  background: #fff3e0;
+  color: #f57c00;
+  border: 1px solid #f57c00;
+}
+
+.badge.mantenimiento {
+  background: #ffebee;
+  color: #d32f2f;
+  border: 1px solid #d32f2f;
+}
+
+.badge.promocion {
+  background: #e8f5e8;
+  color: #388e3c;
+  border: 1px solid #388e3c;
+}
+
+.badge.importante {
+  background: #f3e5f5;
+  color: #7b1fa2;
+  border: 1px solid #7b1fa2;
+}
+
+/* Estados de envío */
+.estado {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.estado.enviado {
+  background: #e8f5e8;
+  color: #388e3c;
+}
+
+/* ====== ACCIONES ====== */
+.editar {
+  color: #0077ff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.editar:hover {
+  text-decoration: underline;
+}
+
+.eliminar {
+  color: #ff4040;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.eliminar:hover {
+  text-decoration: underline;
+}
+
+/* ====== ESTADÍSTICAS ====== */
+.estadisticas-notificaciones {
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid #243b55;
+}
+
+.estadisticas-notificaciones h3 {
+  color: #141e30;
+  margin-bottom: 20px;
+  font-size: 1.4rem;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 10px;
+}
+
+.tarjetas-estadisticas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.tarjeta-estadistica {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #ffcc00;
+  transition: all 0.3s ease;
+}
+
+.tarjeta-estadistica:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.icono-estadistica {
+  font-size: 2rem;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffcc00;
+  border-radius: 50%;
+}
+
+.contenido-estadistica h4 {
+  color: #243b55;
+  margin-bottom: 5px;
+  font-size: 1rem;
+}
+
+.contenido-estadistica .numero {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #141e30;
+  margin-bottom: 2px;
+}
+
+.contenido-estadistica .periodo {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 768px) {
+  .contenido {
+    padding: 20px;
+  }
+  
+  .form-fila {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .form-fila .input-group {
+    min-width: 100%;
+  }
+  
+  .mensaje,
+  .programacion {
+    min-width: 100%;
+  }
+  
+  .botones-formulario {
+    flex-direction: column;
+  }
+  
+  .btn-enviar,
+  .btn-cancelar {
+    min-width: 100%;
+    width: 100%;
+  }
+  
+  .buscador-tabla {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+  
+  .buscador-tabla .input-group {
+    min-width: 100%;
+  }
+  
+  .buscador-tabla .btn-consultar {
+    width: 100%;
+    min-width: auto;
+  }
+  
+  .tabla-notificaciones {
+    font-size: 0.8rem;
+  }
+  
+  .badge,
+  .estado {
+    font-size: 0.7rem;
+    padding: 4px 8px;
+  }
+  
+  .tabla-notificaciones th,
+  .tabla-notificaciones td {
+    padding: 8px 6px;
+  }
+  
+  .seccion-formulario {
+    margin-bottom: 25px;
+  }
+  
+  .tarjetas-estadisticas {
+    grid-template-columns: 1fr;
+  }
+  
+  .tarjeta-estadistica {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* Mejoras para pantallas muy pequeñas */
+@media (max-width: 480px) {
+  .contenido {
+    padding: 15px;
+  }
+  
+  .encabezado {
+    padding: 15px 20px;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+  
+  .formulario-notificacion {
+    padding: 20px;
+  }
+  
+  .buscador-tabla {
+    padding: 15px;
+  }
+  
+  .estadisticas-notificaciones {
+    padding: 20px;
+  }
+  
+  .tabla-notificaciones {
+    display: block;
+    overflow-x: auto;
+  }
+}

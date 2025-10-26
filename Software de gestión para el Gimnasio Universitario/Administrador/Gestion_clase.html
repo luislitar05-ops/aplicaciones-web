@@ -1,0 +1,329 @@
+
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión de Clases - Administrador Gimnasio ULEAM</title>
+  <link rel="stylesheet" href="css/Gestionar_clases.css">
+</head>
+<body>
+  <header class="encabezado">
+    <h1> Gimnasio ULEAM</h1>
+    <div class="usuario-info">Universidad Laica Eloy Alfaro de Manabí</div>
+  </header>
+
+  <main class="contenido">
+    <section class="titulo-seccion">
+      <h2>Gestión de Clases y Entrenamientos</h2>
+    </section>
+
+    <!-- Formulario para Crear/Editar Clase -->
+    <div class="formulario-clase">
+      <h3>Crear Nueva Clase</h3>
+      <form>
+        <!-- SECCIÓN 1: INFORMACIÓN BÁSICA -->
+        <div class="seccion-formulario">
+          <h4 class="titulo-seccion-formulario">Información Básica</h4>
+          <div class="form-fila">
+            <div class="input-group">
+              <label for="nombre-clase">Nombre de la Clase *</label>
+              <input type="text" id="nombre-clase" name="nombre-clase" required placeholder="Ejemplo: Spinning Avanzado, Yoga Inicial">
+            </div>
+            <div class="input-group">
+              <label for="tipo-clase">Tipo de Clase *</label>
+              <select id="tipo-clase" name="tipo-clase" required>
+                <option value="">Seleccionar tipo</option>
+                <option value="spinning">Spinning</option>
+                <option value="yoga">Yoga</option>
+                <option value="crossfit">Cross Training</option>
+                <option value="zumba">Zumba</option>
+                <option value="pilates">Pilates</option>
+                <option value="boxeo">Boxeo</option>
+                <option value="funcional">Entrenamiento Funcional</option>
+                <option value="personalizado">Entrenamiento Personalizado</option>
+              </select>
+            </div>
+          </div>
+          
+          <div class="form-fila">
+            <div class="input-group descripcion">
+              <label for="descripcion">Descripción de la Clase</label>
+              <textarea id="descripcion" name="descripcion" rows="3" placeholder="Describe la clase, intensidad, nivel requerido, beneficios..."></textarea>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECCIÓN 2: HORARIO Y UBICACIÓN -->
+        <div class="seccion-formulario">
+          <h4 class="titulo-seccion-formulario">Horario y Ubicación</h4>
+          <div class="form-fila">
+            <div class="input-group">
+              <label for="instructor">Instructor *</label>
+              <select id="instructor" name="instructor" required>
+                <option value="">Seleccionar instructor</option>
+                <option value="maria">María Gómez</option>
+                <option value="carlos">Carlos Ruiz</option>
+                <option value="luis">Luis Torres</option>
+                <option value="ana">Ana Mendoza</option>
+              </select>
+            </div>
+            <div class="input-group">
+              <label for="ubicacion">Ubicación *</label>
+              <select id="ubicacion" name="ubicacion" required>
+                <option value="">Seleccionar ubicación</option>
+                <option value="sala1">Sala de Spinning</option>
+                <option value="sala2">Sala de Yoga</option>
+                <option value="sala3">Sala Multiusos</option>
+                <option value="area_pesas">Área de Pesas</option>
+                <option value="exterior">Área Exterior</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-fila">
+            <div class="input-group">
+              <label for="fecha-clase">Fecha de la Clase *</label>
+              <input type="date" id="fecha-clase" name="fecha-clase" required>
+            </div>
+            <div class="input-group">
+              <label for="hora-inicio">Hora de Inicio *</label>
+              <input type="time" id="hora-inicio" name="hora-inicio" required>
+            </div>
+            <div class="input-group">
+              <label for="hora-fin">Hora de Fin *</label>
+              <input type="time" id="hora-fin" name="hora-fin" required>
+            </div>
+          </div>
+
+          <div class="form-fila">
+            <div class="input-group">
+              <label for="frecuencia">Frecuencia</label>
+              <select id="frecuencia" name="frecuencia">
+                <option value="unica">Única vez</option>
+                <option value="diaria">Diaria</option>
+                <option value="semanal" selected>Semanal</option>
+                <option value="mensual">Mensual</option>
+              </select>
+            </div>
+            <div class="input-group">
+              <label for="dias-semana">Días de la Semana</label>
+              <div class="dias-checkbox">
+                <label><input type="checkbox" name="dias" value="lun"> Lun</label>
+                <label><input type="checkbox" name="dias" value="mar"> Mar</label>
+                <label><input type="checkbox" name="dias" value="mie"> Mié</label>
+                <label><input type="checkbox" name="dias" value="jue"> Jue</label>
+                <label><input type="checkbox" name="dias" value="vie"> Vie</label>
+                <label><input type="checkbox" name="dias" value="sab"> Sáb</label>
+                <label><input type="checkbox" name="dias" value="dom"> Dom</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECCIÓN 3: CAPACIDAD Y ESTADO -->
+        <div class="seccion-formulario">
+          <h4 class="titulo-seccion-formulario">Capacidad y Estado</h4>
+          <div class="form-fila">
+            <div class="input-group">
+              <label for="capacidad-maxima">Capacidad Máxima *</label>
+              <input type="number" id="capacidad-maxima" name="capacidad-maxima" required min="1" max="50" value="15">
+            </div>
+            <div class="input-group">
+              <label for="estado-clase">Estado de la Clase *</label>
+              <select id="estado-clase" name="estado-clase" required>
+                <option value="activa">Activa</option>
+                <option value="inactiva">Inactiva</option>
+                <option value="completa">Completa</option>
+                <option value="cancelada">Cancelada</option>
+              </select>
+            </div>
+            <div class="input-group">
+              <label for="nivel-dificultad">Nivel de Dificultad</label>
+              <select id="nivel-dificultad" name="nivel-dificultad">
+                <option value="principiante">Principiante</option>
+                <option value="intermedio" selected>Intermedio</option>
+                <option value="avanzado">Avanzado</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECCIÓN 4: REQUISITOS Y EQUIPAMIENTO -->
+        <div class="seccion-formulario">
+          <h4 class="titulo-seccion-formulario">Requisitos y Equipamiento</h4>
+          <div class="form-fila">
+            <div class="input-group observaciones">
+              <label for="equipamiento">Equipamiento Requerido</label>
+              <textarea id="equipamiento" name="equipamiento" rows="2" placeholder="Lista de equipamiento necesario...">Toalla, botella de agua, ropa deportiva</textarea>
+            </div>
+          </div>
+          
+          <div class="form-fila">
+            <div class="input-group observaciones">
+              <label for="requisitos">Requisitos y Recomendaciones</label>
+              <textarea id="requisitos" name="requisitos" rows="2" placeholder="Requisitos de salud, experiencia previa, recomendaciones..."></textarea>
+            </div>
+          </div>
+        </div>
+        
+        <div class="botones-formulario">
+          <button type="submit" class="btn-guardar">Guardar Clase</button>
+          <button type="reset" class="btn-cancelar">Limpiar Formulario</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- BUSCADOR DE CLASES -->
+    <div class="buscador-tabla">
+      <div class="input-group">
+        <label for="buscar-clase">Buscar clase por nombre:</label>
+        <input type="text" id="buscar-clase" name="buscar-clase" placeholder="Ejemplo: Spinning, Yoga">
+      </div>
+      <div class="input-group">
+        <label for="filtro-instructor">Filtrar por instructor:</label>
+        <select id="filtro-instructor" name="filtro-instructor">
+          <option value="">Todos los instructores</option>
+          <option value="maria">María Gómez</option>
+          <option value="carlos">Carlos Ruiz</option>
+          <option value="luis">Luis Torres</option>
+          <option value="ana">Ana Mendoza</option>
+        </select>
+      </div>
+      <div class="input-group">
+        <label for="filtro-estado">Filtrar por estado:</label>
+        <select id="filtro-estado" name="filtro-estado">
+          <option value="">Todos los estados</option>
+          <option value="activa">Activa</option>
+          <option value="inactiva">Inactiva</option>
+          <option value="completa">Completa</option>
+          <option value="cancelada">Cancelada</option>
+        </select>
+      </div>
+      <button type="button" class="btn-consultar">Consultar</button>
+    </div>
+
+    <!-- Tabla de Clases Programadas -->
+    <section class="tabla-container">
+      <table class="tabla-clases">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Tipo</th>
+            <th>Instructor</th>
+            <th>Fecha y Hora</th>
+            <th>Ubicación</th>
+            <th>Capacidad</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>001</td>
+            <td>Spinning Avanzado</td>
+            <td>Spinning</td>
+            <td>María Gómez</td>
+            <td>15 Nov - 08:00-09:00</td>
+            <td>Sala de Spinning</td>
+            <td>10/12</td>
+            <td><span class="badge activa">Activa</span></td>
+            <td>
+              <a href="#" class="editar">Editar</a> |
+              <a href="#" class="eliminar">Eliminar</a>
+            </td>
+          </tr>
+          <tr>
+            <td>002</td>
+            <td>Yoga Terapéutico</td>
+            <td>Yoga</td>
+            <td>Carlos Ruiz</td>
+            <td>16 Nov - 10:00-11:00</td>
+            <td>Sala de Yoga</td>
+            <td>8/15</td>
+            <td><span class="badge activa">Activa</span></td>
+            <td>
+              <a href="#" class="editar">Editar</a> |
+              <a href="#" class="eliminar">Eliminar</a>
+            </td>
+          </tr>
+          <tr>
+            <td>003</td>
+            <td>Cross Training</td>
+            <td>Cross Training</td>
+            <td>Luis Torres</td>
+            <td>18 Nov - 07:00-08:00</td>
+            <td>Sala Multiusos</td>
+            <td>6/10</td>
+            <td><span class="badge activa">Activa</span></td>
+            <td>
+              <a href="#" class="editar">Editar</a> |
+              <a href="#" class="eliminar">Eliminar</a>
+            </td>
+          </tr>
+          <tr>
+            <td>004</td>
+            <td>Zumba Fitness</td>
+            <td>Zumba</td>
+            <td>Ana Mendoza</td>
+            <td>14 Nov - 18:00-19:00</td>
+            <td>Sala Multiusos</td>
+            <td>18/20</td>
+            <td><span class="badge completa">Completa</span></td>
+            <td>
+              <a href="#" class="editar">Editar</a> |
+              <a href="#" class="eliminar">Eliminar</a>
+            </td>
+          </tr>
+          <tr>
+            <td>005</td>
+            <td>Pilates Mat</td>
+            <td>Pilates</td>
+            <td>Ana Mendoza</td>
+            <td>17 Nov - 09:00-10:00</td>
+            <td>Sala de Yoga</td>
+            <td>5/8</td>
+            <td><span class="badge activa">Activa</span></td>
+            <td>
+              <a href="#" class="editar">Editar</a> |
+              <a href="#" class="eliminar">Eliminar</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Estadísticas Rápidas -->
+    <section class="estadisticas-clases">
+      <h3>Estadísticas de Clases</h3>
+      <div class="tarjetas-estadisticas">
+        <div class="tarjeta-estadistica">
+          <div class="icono-estadistica">📊</div>
+          <div class="contenido-estadistica">
+            <h4>Clases Esta Semana</h4>
+            <p class="numero">24</p>
+            <span class="periodo">Total programadas</span>
+          </div>
+        </div>
+        <div class="tarjeta-estadistica">
+          <div class="icono-estadistica">👥</div>
+          <div class="contenido-estadistica">
+            <h4>Participación Promedio</h4>
+            <p class="numero">78%</p>
+            <span class="periodo">Capacidad utilizada</span>
+          </div>
+        </div>
+        <div class="tarjeta-estadistica">
+          <div class="icono-estadistica">🎯</div>
+          <div class="contenido-estadistica">
+            <h4>Clases Más Populares</h4>
+            <p class="numero">Spinning</p>
+            <span class="periodo">92% ocupación</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="VALIDACION/Gestion_clase.js"></script>
+</body>
+</html>

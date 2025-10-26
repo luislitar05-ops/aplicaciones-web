@@ -1,0 +1,228 @@
+/* ===== ESTILOS SIMPLES ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ===== VIDEO DE FONDO ENFOCADO EN PARTE SUPERIOR ===== */
+#video-fondo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    object-position: center top;
+    z-index: -1;
+}
+
+/* ===== OVERLAY COMPLETAMENTE PEGADO A LA IZQUIERDA ===== */
+.overlay {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    padding-left: 0; /* Eliminado completamente el padding izquierdo */
+    background: rgba(27, 37, 75, 0.7);
+}
+
+/* ===== CAJA DE LOGIN GRANDE PEGADA A LA IZQUIERDA ===== */
+.login-box {
+    background: white;
+    padding: 50px 45px; /* Más padding para hacerlo más grande */
+    border-radius: 0 20px 20px 0; /* Solo esquinas redondeadas a la derecha */
+    box-shadow: 5px 0 25px rgba(0, 0, 0, 0.3); /* Sombra solo a la derecha */
+    width: 500px; /* Ancho aumentado */
+    min-height: 100vh; /* Ocupa toda la altura de la ventana */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 0; /* Aseguramos que no haya margen */
+}
+
+/* ===== TÍTULOS SIMPLES ===== */
+.login-box h1 {
+    font-size: 40px;
+    color: #1b254b;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.login-box h2 {
+    font-size: 30px;
+    color: #666;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+/* ===== INPUTS SIMPLES ===== */
+.input-group {
+    margin-bottom: 30px;
+}
+
+.input-group label {
+    display: block;
+    color: #1b254b;
+    font-weight: 600;
+    margin-bottom: 12px;
+    font-size: 17px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 18px 20px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 17px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.input-group input:focus {
+    border-color: #ffd200;
+    box-shadow: 0 0 8px rgba(255, 210, 0, 0.3);
+}
+
+/* ===== BOTÓN SIMPLE ===== */
+.btn {
+    width: 100%;
+    background: #ffd200;
+    color: #1b254b;
+    border: none;
+    padding: 20px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 20px;
+}
+
+.btn:hover {
+    background: #ffcc00;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 204, 0, 0.4);
+}
+
+/* ===== ENLACE SIMPLE ===== */
+.extra-links {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.extra-links a {
+    text-decoration: none;
+    color: #1b254b;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.extra-links a:hover {
+    text-decoration: underline;
+    color: #ffd200;
+}
+
+/* ===== FOOTER SIMPLE ===== */
+footer {
+    margin-top: 40px;
+    font-size: 15px;
+    color: #666;
+    text-align: center;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #ffd200;
+}
+
+/* ===== RESPONSIVE SIMPLE ===== */
+@media (max-width: 768px) {
+    .overlay {
+        padding: 0; /* Sin padding en móviles tampoco */
+        justify-content: center;
+    }
+    
+    .login-box {
+        width: 100%;
+        max-width: 100%;
+        padding: 40px 30px;
+        min-height: 100vh;
+        border-radius: 0; /* Sin bordes redondeados en móvil */
+        box-shadow: none; /* Sin sombra en móvil */
+    }
+    
+    .login-box h1 {
+        font-size: 34px;
+    }
+    
+    .login-box h2 {
+        font-size: 26px;
+        margin-bottom: 40px;
+    }
+    
+    .input-group {
+        margin-bottom: 25px;
+    }
+    
+    .input-group input {
+        padding: 16px 18px;
+    }
+    
+    .btn {
+        padding: 18px;
+        font-size: 17px;
+    }
+}
+
+/* Para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    .login-box {
+        padding: 30px 25px;
+    }
+    
+    .login-box h1 {
+        font-size: 30px;
+    }
+    
+    .login-box h2 {
+        font-size: 24px;
+        margin-bottom: 35px;
+    }
+    
+    .input-group label {
+        font-size: 16px;
+    }
+    
+    .input-group input {
+        padding: 15px;
+        font-size: 16px;
+    }
+    
+    .btn {
+        padding: 16px;
+        font-size: 16px;
+    }
+    
+    footer {
+        margin-top: 30px;
+        padding: 15px;
+    }
+}
+
+/* Para pantallas muy grandes (más de 1200px) */
+@media (min-width: 1200px) {
+    .login-box {
+        width: 550px; /* Un poco más ancho en pantallas grandes */
+        padding: 60px 50px;
+    }
+    
+    .login-box h1 {
+        font-size: 42px;
+    }
+    
+    .login-box h2 {
+        font-size: 32px;
+    }
+}

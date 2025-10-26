@@ -1,0 +1,238 @@
+
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Membresía - Gimnasio Universitario</title>
+  <link rel="stylesheet" href="css/cliente_membresia.css">
+</head>
+<body>
+  <header class="encabezado">
+    <h1>- Gimnasio ULEAM</h1>
+    <div class="usuario-info">Bienvenido, Juan Pérez</div>
+  </header>
+
+  <main class="contenido">
+    <section class="titulo-seccion">
+      <h2>Mi Membresía</h2>
+    </section>
+
+    <!-- Tarjeta de Estado de Membresía -->
+    <div class="estado-membresia">
+      <div class="tarjeta-membresia">
+        <div class="header-tarjeta">
+          <h3>Membresía Premium</h3>
+          <span class="badge-estado activa">Activa</span>
+        </div>
+        <div class="detalles-membresia">
+          <div class="info-membresia">
+            <div class="campo">
+              <span class="etiqueta">Fecha de Inicio:</span>
+              <span class="valor">01/10/2024</span>
+            </div>
+            <div class="campo">
+              <span class="etiqueta">Fecha de Vencimiento:</span>
+              <span class="valor">01/01/2025</span>
+            </div>
+            <div class="campo">
+              <span class="etiqueta">Días Restantes:</span>
+              <span class="valor destacado">45 días</span>
+            </div>
+            <div class="campo">
+              <span class="etiqueta">Precio:</span>
+              <span class="valor">$70.00 / 3 meses</span>
+            </div>
+          </div>
+          <div class="progreso-vencimiento">
+            <div class="barra-progreso">
+              <div class="progreso" style="width: 50%"></div>
+            </div>
+            <div class="leyenda-progreso">
+              <span>Inicio: 01/10/2024</span>
+              <span>Vence: 01/01/2025</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Beneficios de la Membresía -->
+    <section class="beneficios-membresia">
+      <h3>Beneficios de tu Membresía Premium</h3>
+      <div class="lista-beneficios">
+        <div class="beneficio">
+          <span class="icono-beneficio">✅</span>
+          <span class="texto-beneficio">Acceso ilimitado a todas las áreas del gimnasio</span>
+        </div>
+        <div class="beneficio">
+          <span class="icono-beneficio">✅</span>
+          <span class="texto-beneficio">Uso de equipo cardiovascular y de fuerza</span>
+        </div>
+        <div class="beneficio">
+          <span class="icono-beneficio">✅</span>
+          <span class="texto-beneficio">Clases grupales incluidas (Yoga, Spinning, Zumba)</span>
+        </div>
+        <div class="beneficio">
+          <span class="icono-beneficio">✅</span>
+          <span class="texto-beneficio">Asesoramiento básico de entrenadores</span>
+        </div>
+        <div class="beneficio">
+          <span class="icono-beneficio">✅</span>
+          <span class="texto-beneficio">Acceso a vestuarios y lockers</span>
+        </div>
+        <div class="beneficio">
+          <span class="icono-beneficio">✅</span>
+          <span class="texto-beneficio">Descuento en suplementos nutricionales (15%)</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Historial de Pagos -->
+    <section class="historial-pagos">
+      <h3>Historial de Pagos</h3>
+      <div class="tabla-container">
+        <table class="tabla-pagos">
+          <thead>
+            <tr>
+              <th>Fecha</th>
+              <th>Concepto</th>
+              <th>Monto</th>
+              <th>Estado</th>
+              <th>Método</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>01/10/2024</td>
+              <td>Renovación Premium - 3 meses</td>
+              <td>$70.00</td>
+              <td><span class="estado-pago pagado">Pagado</span></td>
+              <td>Tarjeta</td>
+            </tr>
+            <tr>
+              <td>01/07/2024</td>
+              <td>Renovación Premium - 3 meses</td>
+              <td>$70.00</td>
+              <td><span class="estado-pago pagado">Pagado</span></td>
+              <td>Efectivo</td>
+            </tr>
+            <tr>
+              <td>01/04/2024</td>
+              <td>Renovación Premium - 3 meses</td>
+              <td>$70.00</td>
+              <td><span class="estado-pago pagado">Pagado</span></td>
+              <td>Tarjeta</td>
+            </tr>
+            <tr>
+              <td>01/01/2024</td>
+              <td>Membresía Premium - 3 meses</td>
+              <td>$70.00</td>
+              <td><span class="estado-pago pagado">Pagado</span></td>
+              <td>Transferencia</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Opciones de Renovación -->
+    <section class="opciones-renovacion">
+      <h3>Opciones de Renovación</h3>
+      <div class="planes-membresia">
+        <div class="plan">
+          <div class="header-plan">
+            <h4>Básica</h4>
+            <div class="precio-plan">$25.00<span class="periodo">/mes</span></div>
+          </div>
+          <ul class="beneficios-plan">
+            <li>Acceso a áreas básicas</li>
+            <li>Equipo de fuerza</li>
+            <li>Horario estándar</li>
+            <li class="no-incluido">Clases grupales</li>
+            <li class="no-incluido">Asesoramiento</li>
+          </ul>
+          <button class="btn-seleccionar">Seleccionar</button>
+        </div>
+
+        <div class="plan destacado">
+          <div class="header-plan">
+            <h4>Premium</h4>
+            <div class="precio-plan">$70.00<span class="periodo">/3 meses</span></div>
+          </div>
+          <ul class="beneficios-plan">
+            <li>Acceso completo</li>
+            <li>Todo el equipo</li>
+            <li>Clases grupales incluidas</li>
+            <li>Asesoramiento básico</li>
+            <li>Descuento en suplementos</li>
+          </ul>
+          <button class="btn-seleccionar activo">Plan Actual</button>
+        </div>
+
+        <div class="plan">
+          <div class="header-plan">
+            <h4>VIP</h4>
+            <div class="precio-plan">$250.00<span class="periodo">/año</span></div>
+          </div>
+          <ul class="beneficios-plan">
+            <li>Todos los beneficios Premium</li>
+            <li>Entrenador personal (4 sesiones)</li>
+            <li>Acceso prioritario</li>
+            <li>Evaluación física completa</li>
+            <li>Plan nutricional básico</li>
+          </ul>
+          <button class="btn-seleccionar">Seleccionar</button>
+        </div>
+      </div>
+    </section>
+    <!-- Sección de Pago Simplificada -->
+    <section class="seccion-pago">
+      <h3>Renovar Membresía</h3>
+      <div class="formulario-pago">
+        <div class="resumen-compra">
+          <h4>Resumen de Compra</h4>
+          <div class="detalle-compra">
+            <div class="item-compra">
+              <span>Membresía Premium - 3 meses</span>
+              <span>$70.00</span>
+            </div>
+            <div class="item-compra">
+              <span>Descuento por renovación anticipada</span>
+              <span>-$5.00</span>
+            </div>
+            <div class="total-compra">
+              <span>Total a Pagar</span>
+              <span>$65.00</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="metodo-pago">
+          <h4>Método de Pago</h4>
+          <div class="opciones-pago">
+            <label class="opcion-pago seleccionada">
+              <input type="radio" name="metodo-pago" checked>
+              <span class="checkmark"></span>
+              Tarjeta de Crédito/Débito
+            </label>
+          </div>
+
+          <div class="datos-tarjeta">
+            <div class="input-group">
+              <label for="numero-tarjeta">Número de Tarjeta *</label>
+              <input type="text" id="numero-tarjeta" required placeholder="1234 5678 9012 3456">
+            </div>
+          </div>
+
+          <div class="info-pago">
+            <p><strong>Otras formas de pago:</strong></p>
+            <p>Si prefieres pagar por transferencia bancaria o en efectivo, acércate a nuestra recepción para completar la renovación.</p>
+          </div>
+
+          <button class="btn-pagar">Pagar $65.00</button>
+        </div>
+      </div>
+    </section>
+    <script src="VALIDACION/Cliente_Membresia.js"></script>
+</body>
+</html>

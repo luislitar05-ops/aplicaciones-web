@@ -1,0 +1,168 @@
+
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Control de Asistencia - Gimnasio Universitario</title>
+  <link rel="stylesheet" href="CSS/control_asistencia.css">
+</head>
+<body>
+  <header class="encabezado">
+    <h1>Gimnasio ULEAM</h1>
+    <div class="usuario-info">Universidad Laica Eloy Alfaro de Manabí</div>
+  </header>
+
+  <main class="contenido">
+    <section class="titulo-seccion">
+      <h2>Control de Asistencia</h2>
+    </section>
+
+    <!-- Formulario para Registrar Asistencia -->
+    <div class="formulario-registro">
+      <h3>Registrar Asistencia</h3>
+      <form id="form-asistencia">
+        <!-- Fila 1: Cédula del Usuario -->
+        <div class="form-fila">
+          <div class="input-group">
+            <label for="cedula">Cédula del Usuario *</label>
+            <input type="text" id="cedula" name="cedula" required placeholder="Ingrese cédula (10 dígitos)" maxlength="10">
+          </div>
+        </div>
+
+        <!-- Fila 2: Tipo de Registro y Fecha/Hora -->
+        <div class="form-fila">
+          <div class="input-group">
+            <label for="tipo-registro">Tipo de Registro *</label>
+            <select id="tipo-registro" name="tipo-registro" required>
+              <option value="">Seleccionar tipo</option>
+              <option value="entrada">Entrada</option>
+              <option value="salida">Salida</option>
+            </select>
+          </div>
+          <div class="input-group">
+            <label for="fecha-hora">Fecha y Hora *</label>
+            <input type="datetime-local" id="fecha-hora" name="fecha-hora" required>
+          </div>
+        </div>
+
+        <!-- Fila 3: Observaciones -->
+        <div class="form-fila">
+          <div class="input-group observaciones">
+            <label for="observaciones">Observaciones (Opcional)</label>
+            <textarea id="observaciones" name="observaciones" rows="3" placeholder="Notas sobre la asistencia"></textarea>
+          </div>
+        </div>
+        
+        <div class="botones-formulario">
+          <button type="submit" class="btn-registrar">Registrar Asistencia</button>
+          <button type="reset" class="btn-cancelar">Limpiar Formulario</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- BUSCADOR DE HISTORIAL -->
+    <div class="buscador-tabla">
+      <div class="input-group">
+        <label for="buscar-historial">Buscar por cédula:</label>
+        <input type="text" id="buscar-historial" name="buscar-historial" placeholder="Ejemplo: 1314256789">
+      </div>
+      <div class="input-group">
+        <label for="fecha-inicio">Fecha inicio:</label>
+        <input type="date" id="fecha-inicio" name="fecha-inicio">
+      </div>
+      <div class="input-group">
+        <label for="fecha-fin">Fecha fin:</label>
+        <input type="date" id="fecha-fin" name="fecha-fin">
+      </div>
+      <button type="button" class="btn-consultar">Consultar Historial</button>
+    </div>
+
+    <!-- Tabla de Historial de Asistencia -->
+    <section class="tabla-container">
+      <table class="tabla-asistencia">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Usuario</th>
+            <th>Cédula</th>
+            <th>Fecha</th>
+            <th>Hora Entrada</th>
+            <th>Hora Salida</th>
+            <th>Duración</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>001</td>
+            <td>Juan Pérez</td>
+            <td>1314256789</td>
+            <td>10/11/2024</td>
+            <td>08:15 AM</td>
+            <td>10:30 AM</td>
+            <td>2h 15m</td>
+            <td>
+              <a href="#" class="editar">Editar</a> |
+              <a href="#" class="eliminar">Eliminar</a>
+            </td>
+          </tr>
+          <tr>
+            <td>002</td>
+            <td>María Gómez</td>
+            <td>1314267890</td>
+            <td>10/11/2024</td>
+            <td>09:00 AM</td>
+            <td>11:45 AM</td>
+            <td>2h 45m</td>
+            <td>
+              <a href="#" class="editar">Editar</a> |
+              <a href="#" class="eliminar">Eliminar</a>
+            </td>
+          </tr>
+          <tr>
+            <td>003</td>
+            <td>Carlos Ruiz</td>
+            <td>1314278901</td>
+            <td>10/11/2024</td>
+            <td>04:30 PM</td>
+            <td>06:15 PM</td>
+            <td>1h 45m</td>
+            <td>
+              <a href="#" class="editar">Editar</a> |
+              <a href="#" class="eliminar">Eliminar</a>
+            </td>
+          </tr>
+          <tr>
+            <td>004</td>
+            <td>Luis Torres</td>
+            <td>1314289012</td>
+            <td>09/11/2024</td>
+            <td>07:20 AM</td>
+            <td>09:05 AM</td>
+            <td>1h 45m</td>
+            <td>
+              <a href="#" class="editar">Editar</a> |
+              <a href="#" class="eliminar">Eliminar</a>
+            </td>
+          </tr>
+          <tr>
+            <td>005</td>
+            <td>Ana Mendoza</td>
+            <td>1314290123</td>
+            <td>09/11/2024</td>
+            <td>10:10 AM</td>
+            <td>12:00 PM</td>
+            <td>1h 50m</td>
+            <td>
+              <a href="#" class="editar">Editar</a> |
+              <a href="#" class="eliminar">Eliminar</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="VALIDACION/Control_asistencia.js"></script>
+</body>
+</html>

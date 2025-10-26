@@ -1,0 +1,253 @@
+
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notificaciones y Comunicados - Gimnasio Universitario</title>
+  <link rel="stylesheet" href="CSS/notificacion_comunicados.css">
+</head>
+<body>
+  <header class="encabezado">
+    <h1>Gimnasio ULEAM</h1>
+    <div class="usuario-info">Universidad Laica Eloy Alfaro de Manabí</div>
+  </header>
+
+  <main class="contenido">
+    <section class="titulo-seccion">
+      <h2>Notificaciones y Comunicados</h2>
+    </section>
+
+    <!-- Formulario para Crear Notificación -->
+    <div class="formulario-notificacion">
+      <h3>Crear Nueva Notificación</h3>
+      <form>
+        
+        <!-- SECCIÓN 1: INFORMACIÓN BÁSICA -->
+        <div class="seccion-formulario">
+          <h4 class="titulo-seccion-formulario">Información Básica</h4>
+          <div class="form-fila">
+            <div class="input-group">
+              <label for="titulo">Título de la Notificación *</label>
+              <input type="text" id="titulo" name="titulo" required placeholder="Ejemplo: Recordatorio de Pago, Cambio de Horarios">
+            </div>
+            <div class="input-group">
+              <label for="tipo">Tipo de Notificación *</label>
+              <select id="tipo" name="tipo" required>
+                <option value="">Seleccionar tipo</option>
+                <option value="recordatorio">Recordatorio de Pago</option>
+                <option value="anuncio">Anuncio General</option>
+                <option value="mantenimiento">Aviso de Mantenimiento</option>
+                <option value="promocion">Promoción Especial</option>
+                <option value="importante">Aviso Importante</option>
+              </select>
+            </div>
+          </div>
+          
+          <div class="form-fila">
+            <div class="input-group mensaje">
+              <label for="mensaje">Mensaje *</label>
+              <textarea id="mensaje" name="mensaje" rows="4" required placeholder="Escriba el contenido del mensaje que desea enviar..."></textarea>
+              <span class="hint">Máximo 500 caracteres</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECCIÓN 2: DESTINATARIOS -->
+        <div class="seccion-formulario">
+          <h4 class="titulo-seccion-formulario">Destinatarios</h4>
+          <div class="form-fila">
+            <div class="input-group">
+              <label for="destinatarios">Seleccionar Destinatarios *</label>
+              <select id="destinatarios" name="destinatarios" required>
+                <option value="">Seleccionar destinatarios</option>
+                <option value="clientes">Solo Clientes</option>
+                <option value="entrenadores">Solo Entrenadores</option>
+                <option value="membresia-activa">Clientes con Membresía Activa</option>
+                <option value="membresia-vencida">Clientes con Membresía Vencida</option>
+                <option value="personalizado">Selección Personalizada</option>
+              </select>
+            </div>
+            <div class="input-group">
+              <label for="prioridad">Prioridad</label>
+              <select id="prioridad" name="prioridad">
+                <option value="normal">Normal</option>
+                <option value="alta">Alta</option>
+                <option value="urgente">Urgente</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECCIÓN 3: PROGRAMACIÓN -->
+        <div class="seccion-formulario">
+          <h4 class="titulo-seccion-formulario">Programación</h4>
+          <div class="form-fila">
+            <div class="input-group">
+              <label for="envio-inmediato">
+                <input type="checkbox" id="envio-inmediato" name="envio-inmediato" checked>
+                Envío Inmediato
+              </label>
+            </div>
+            <div class="input-group programacion" style="display: none;" id="grupo-programacion">
+              <label for="fecha-envio">Programar Envío para:</label>
+              <input type="datetime-local" id="fecha-envio" name="fecha-envio">
+            </div>
+          </div>
+        </div>
+        
+        <div class="botones-formulario">
+          <button type="submit" class="btn-enviar">Enviar Notificación</button>
+          <button type="reset" class="btn-cancelar">Limpiar Formulario</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- BUSCADOR DE NOTIFICACIONES -->
+    <div class="buscador-tabla">
+      <div class="input-group">
+        <label for="buscar-notificacion">Buscar por título:</label>
+        <input type="text" id="buscar-notificacion" name="buscar-notificacion" placeholder="Ejemplo: Recordatorio, Mantenimiento">
+      </div>
+      <div class="input-group">
+        <label for="filtro-tipo">Filtrar por tipo:</label>
+        <select id="filtro-tipo" name="filtro-tipo">
+          <option value="">Todos los tipos</option>
+          <option value="recordatorio">Recordatorio de Pago</option>
+          <option value="anuncio">Anuncio General</option>
+          <option value="mantenimiento">Aviso de Mantenimiento</option>
+          <option value="promocion">Promoción Especial</option>
+          <option value="importante">Aviso Importante</option>
+        </select>
+      </div>
+      <div class="input-group">
+        <label for="filtro-fecha">Filtrar por fecha:</label>
+        <input type="date" id="filtro-fecha" name="filtro-fecha">
+      </div>
+      <button type="button" class="btn-consultar">Consultar</button>
+    </div>
+
+    <!-- Tabla de Historial de Notificaciones -->
+    <section class="tabla-container">
+      <table class="tabla-notificaciones">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Título</th>
+            <th>Tipo</th>
+            <th>Destinatarios</th>
+            <th>Fecha Envío</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>001</td>
+            <td>Recordatorio de Pago Mensual</td>
+            <td><span class="badge recordatorio">Recordatorio</span></td>
+            <td>Todos los Clientes</td>
+            <td>01/11/2024 08:00</td>
+            <td><span class="estado enviado">Enviado</span></td>
+            <td>
+              <a href="#" class="editar">Editar</a> |
+              <a href="#" class="eliminar">Eliminar</a>
+            </td>
+          </tr>
+          <tr>
+            <td>002</td>
+            <td>Mantenimiento Programado</td>
+            <td><span class="badge mantenimiento">Mantenimiento</span></td>
+            <td>Todos los Usuarios</td>
+            <td>25/10/2024 10:30</td>
+            <td><span class="estado enviado">Enviado</span></td>
+            <td>
+              <a href="#" class="editar">Editar</a> |
+              <a href="#" class="eliminar">Eliminar</a>
+            </td>
+          </tr>
+          <tr>
+            <td>003</td>
+            <td>Promoción Especial de Verano</td>
+            <td><span class="badge promocion">Promoción</span></td>
+            <td>Clientes Activos</td>
+            <td>15/10/2024 09:15</td>
+            <td><span class="estado enviado">Enviado</span></td>
+            <td>
+              <a href="#" class="editar">Editar</a> |
+              <a href="#" class="eliminar">Eliminar</a>
+            </td>
+          </tr>
+          <tr>
+            <td>004</td>
+            <td>Cambio de Horarios</td>
+            <td><span class="badge anuncio">Anuncio</span></td>
+            <td>Todos los Usuarios</td>
+            <td>10/10/2024 14:20</td>
+            <td><span class="estado enviado">Enviado</span></td>
+            <td>
+              <a href="#" class="editar">Editar</a> |
+              <a href="#" class="eliminar">Eliminar</a>
+            </td>
+          </tr>
+          <tr>
+            <td>005</td>
+            <td>Recordatorio Vencimiento Membresía</td>
+            <td><span class="badge recordatorio">Recordatorio</span></td>
+            <td>Clientes con membresía próxima a vencer</td>
+            <td>05/10/2024 11:45</td>
+            <td><span class="estado enviado">Enviado</span></td>
+            <td>
+              <a href="#" class="editar">Editar</a> |
+              <a href="#" class="eliminar">Eliminar</a>
+            </td>
+          </tr>
+          <tr>
+            <td>006</td>
+            <td>Nuevos Equipos Disponibles</td>
+            <td><span class="badge importante">Importante</span></td>
+            <td>Todos los Clientes</td>
+            <td>28/09/2024 16:30</td>
+            <td><span class="estado enviado">Enviado</span></td>
+            <td>
+              <a href="#" class="editar">Editar</a> |
+              <a href="#" class="eliminar">Eliminar</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Estadísticas Rápidas -->
+    <section class="estadisticas-notificaciones">
+      <h3>Estadísticas de Notificaciones</h3>
+      <div class="tarjetas-estadisticas">
+        <div class="tarjeta-estadistica">
+          <div class="icono-estadistica">📤</div>
+          <div class="contenido-estadistica">
+            <h4>Total Enviadas</h4>
+            <p class="numero">24</p>
+            <span class="periodo">Este mes</span>
+          </div>
+        </div>
+        <div class="tarjeta-estadistica">
+          <div class="icono-estadistica">👥</div>
+          <div class="contenido-estadistica">
+            <h4>Destinatarios Únicos</h4>
+            <p class="numero">156</p>
+            <span class="periodo">Clientes activos</span>
+          </div>
+        </div>
+        <div class="tarjeta-estadistica">
+          <div class="icono-estadistica">📊</div>
+          <div class="contenido-estadistica">
+            <h4>Tasa de Apertura</h4>
+            <p class="numero">78%</p>
+            <span class="periodo">Promedio mensual</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="VALIDACION/Notificaion_comunicacion.js"></script>
+</body>
+</html>

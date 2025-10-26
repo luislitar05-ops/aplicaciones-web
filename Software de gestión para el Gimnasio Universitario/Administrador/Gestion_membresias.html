@@ -1,0 +1,137 @@
+
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión de Membresías - Gimnasio Universitario</title>
+  <link rel="stylesheet" href="CSS/Gestion_membresia.css">
+</head>
+<body>
+  <header class="encabezado">
+    <h1>Gimnasio ULEAM</h1>
+    <div class="usuario-info">Universidad Laica Eloy Alfaro de Manabí</div>
+  </header>
+
+  <main class="contenido">
+    <section class="titulo-seccion">
+      <h2>Gestión de Membresías</h2>
+    </section>
+
+    <!-- Formulario para Agregar Membresía -->
+    <div class="formulario-agregar">
+      <h3>Agregar Nueva Membresía</h3>
+      <form>
+        <!-- Fila 1: Nombre y Tipo -->
+        <div class="form-fila">
+          <div class="input-group">
+            <label for="nombre">Nombre de la Membresía *</label>
+            <input type="text" id="nombre" name="nombre" required placeholder="Ejemplo: Básica, Premium, VIP">
+          </div>
+          <div class="input-group">
+            <label for="tipo">Duración *</label>
+            <select id="tipo" name="tipo" required>
+              <option value="">Seleccionar duración</option>
+              <option value="1 mes">1 Mes</option>
+              <option value="3 meses">3 Meses</option>
+              <option value="6 meses">6 Meses</option>
+              <option value="1 año">1 Año</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Fila 2: Precio y Estado -->
+        <div class="form-fila">
+          <div class="input-group">
+            <label for="precio">Precio ($) *</label>
+            <input type="number" id="precio" name="precio" required min="0" step="0.01" placeholder="0.00">
+          </div>
+          <div class="input-group">
+            <label for="estado">Estado *</label>
+            <select id="estado" name="estado" required>
+              <option value="">Seleccionar estado</option>
+              <option value="activa">Activa</option>
+              <option value="inactiva">Inactiva</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Fila 3: Descripción -->
+        <div class="form-fila">
+          <div class="input-group descripcion">
+            <label for="descripcion">Descripción de Beneficios</label>
+            <textarea id="descripcion" name="descripcion" rows="3" placeholder="Incluye descripción de los beneficios, servicios incluidos, restricciones, etc."></textarea>
+          </div>
+        </div>
+        
+        <div class="botones-formulario">
+          <button type="submit" class="btn-guardar">Guardar Membresía</button>
+          <button type="reset" class="btn-cancelar">Limpiar Formulario</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- BUSCADOR ENCIMA DE LA TABLA -->
+    <div class="buscador-tabla">
+      <div class="input-group">
+        <label for="buscar-tabla">Buscar membresía por nombre:</label>
+        <input type="text" id="buscar-tabla" name="buscar-tabla" placeholder="Ejemplo: Básica, Premium">
+      </div>
+      <button class="btn-consultar">Consultar</button>
+    </div>
+
+    <!-- Tabla de Membresías -->
+    <section class="tabla-container">
+      <table class="tabla-membresias">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Duración</th>
+            <th>Precio</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>01</td>
+            <td>Básica</td>
+            <td>1 Mes</td>
+            <td>$25.00</td>
+            <td><span class="badge activa">Activa</span></td>
+            <td>
+              <a href="#" class="editar">Editar</a> |
+              <a href="#" class="eliminar">Eliminar</a>
+            </td>
+          </tr>
+          <tr>
+            <td>02</td>
+            <td>Premium</td>
+            <td>3 Meses</td>
+            <td>$70.00</td>
+            <td><span class="badge activa">Activa</span></td>
+            <td>
+              <a href="#" class="editar">Editar</a> |
+              <a href="#" class="eliminar">Eliminar</a>
+            </td>
+          </tr>
+          <tr>
+            <td>03</td>
+            <td>VIP</td>
+            <td>1 Año</td>
+            <td>$250.00</td>
+            <td><span class="badge activa">Activa</span></td>
+            <td>
+              <a href="#" class="editar">Editar</a> |
+              <a href="#" class="eliminar">Eliminar</a>
+            </td>
+          </tr>
+         
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+  <script src="VALIDACION/Gestion_Membresia.js"></script>
+</body>
+</html>

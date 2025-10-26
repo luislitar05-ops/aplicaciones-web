@@ -1,0 +1,236 @@
+
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión de Inventario - Gimnasio Universitario</title>
+  <link rel="stylesheet" href="css/gestion_inventario.css">
+</head>
+<body>
+  <header class="encabezado">
+    <h1>Gimnasio ULEAM</h1>
+    <div class="usuario-info">Universidad Laica Eloy Alfaro de Manabí</div>
+  </header>
+
+  <main class="contenido">
+    <section class="titulo-seccion">
+      <h2>Gestión de Inventario</h2>
+    </section>
+
+    <!-- Formulario para Agregar/Editar Item -->
+    <div class="formulario-inventario">
+      <h3>Agregar Nuevo Item al Inventario</h3>
+      <form>
+        
+        <!-- SECCIÓN 1: INFORMACIÓN BÁSICA -->
+        <div class="seccion-formulario">
+          <h4 class="titulo-seccion-formulario">Información Básica</h4>
+          <div class="form-fila">
+            <div class="input-group">
+              <label for="nombre-item">Nombre del Item *</label>
+              <input type="text" id="nombre-item" name="nombre-item" required placeholder="Ejemplo: Mancuerna 10kg">
+            </div>
+            <div class="input-group">
+              <label for="categoria">Categoría *</label>
+              <select id="categoria" name="categoria" required>
+                <option value="">Seleccionar categoría</option>
+                <option value="equipos">Equipos de Ejercicio</option>
+                <option value="pesas">Pesas y Mancuernas</option>
+                <option value="cardio">Equipo Cardio</option>
+                <option value="accesorios">Accesorios</option>
+                <option value="suplementos">Suplementos</option>
+                <option value="limpieza">Productos de Limpieza</option>
+                <option value="oficina">Material de Oficina</option>
+              </select>
+            </div>
+          </div>
+          
+          <div class="form-fila">
+            <div class="input-group descripcion">
+              <label for="descripcion">Descripción del Item</label>
+              <textarea id="descripcion" name="descripcion" rows="3" placeholder="Descripción detallada del item, marca, modelo, especificaciones..."></textarea>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECCIÓN 2: INFORMACIÓN DE STOCK -->
+        <div class="seccion-formulario">
+          <h4 class="titulo-seccion-formulario">Control de Stock</h4>
+          <div class="form-fila">
+            <div class="input-group">
+              <label for="cantidad">Cantidad Actual *</label>
+              <input type="number" id="cantidad" name="cantidad" required min="0" placeholder="0">
+              <span class="hint">Unidades en inventario</span>
+            </div>
+            <div class="input-group">
+              <label for="minimo-stock">Stock Mínimo *</label>
+              <input type="number" id="minimo-stock" name="minimo-stock" required min="0" placeholder="0">
+              <span class="hint">Alerta cuando baje de este nivel</span>
+            </div>
+            <div class="input-group">
+              <label for="ubicacion">Ubicación en Gimnasio</label>
+              <input type="text" id="ubicacion" name="ubicacion" placeholder="Ej: Zona Cardio, Almacén">
+            </div>
+          </div>
+        </div>
+
+        <!-- SECCIÓN 3: ESTADO Y MANTENIMIENTO -->
+        <div class="seccion-formulario">
+          <h4 class="titulo-seccion-formulario">Estado y Mantenimiento</h4>
+          <div class="form-fila">
+            <div class="input-group">
+              <label for="estado">Estado del Item *</label>
+              <select id="estado" name="estado" required>
+                <option value="">Seleccionar estado</option>
+                <option value="disponible">Disponible</option>
+                <option value="mantenimiento">En Mantenimiento</option>
+                <option value="reparacion">En Reparación</option>
+                <option value="baja">Dado de Baja</option>
+              </select>
+            </div>
+            <div class="input-group">
+              <label for="fecha-adquisicion">Fecha de Adquisición</label>
+              <input type="date" id="fecha-adquisicion" name="fecha-adquisicion">
+            </div>
+            <div class="input-group">
+              <label for="proximo-mantenimiento">Próximo Mantenimiento</label>
+              <input type="date" id="proximo-mantenimiento" name="proximo-mantenimiento">
+            </div>
+          </div>
+        </div>
+        
+        <div class="botones-formulario">
+          <button type="submit" class="btn-guardar">Guardar Item</button>
+          <button type="reset" class="btn-cancelar">Limpiar Formulario</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- BUSCADOR DE INVENTARIO -->
+    <div class="buscador-tabla">
+      <div class="input-group">
+        <label for="buscar-item">Buscar item por nombre:</label>
+        <input type="text" id="buscar-item" name="buscar-item" placeholder="Ejemplo: Mancuerna, Treadmill">
+      </div>
+      <div class="input-group">
+        <label for="filtro-categoria">Filtrar por categoría:</label>
+        <select id="filtro-categoria" name="filtro-categoria">
+          <option value="">Todas las categorías</option>
+          <option value="equipos">Equipos de Ejercicio</option>
+          <option value="pesas">Pesas y Mancuernas</option>
+          <option value="cardio">Equipo Cardio</option>
+          <option value="accesorios">Accesorios</option>
+          <option value="suplementos">Suplementos</option>
+          <option value="limpieza">Productos de Limpieza</option>
+          <option value="oficina">Material de Oficina</option>
+        </select>
+      </div>
+      <div class="input-group">
+        <label for="filtro-estado">Filtrar por estado:</label>
+        <select id="filtro-estado" name="filtro-estado">
+          <option value="">Todos los estados</option>
+          <option value="disponible">Disponible</option>
+          <option value="mantenimiento">En Mantenimiento</option>
+          <option value="reparacion">En Reparación</option>
+          <option value="baja">Dado de Baja</option>
+        </select>
+      </div>
+      <button type="button" class="btn-consultar">Consultar</button>
+    </div>
+
+    <!-- Tabla de Inventario -->
+    <section class="tabla-container">
+      <table class="tabla-inventario">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Categoría</th>
+            <th>Cantidad</th>
+            <th>Stock Mínimo</th>
+            <th>Ubicación</th>
+            <th>Estado</th>
+            <th>Próximo Mantenimiento</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>001</td>
+            <td>Treadmill Professional</td>
+            <td>Equipo Cardio</td>
+            <td>5</td>
+            <td>2</td>
+            <td>Zona Cardio</td>
+            <td><span class="badge disponible">Disponible</span></td>
+            <td>15/12/2024</td>
+            <td>
+              <a href="#" class="editar">Editar</a> |
+              <a href="#" class="eliminar">Eliminar</a>
+            </td>
+          </tr>
+          <tr>
+            <td>002</td>
+            <td>Mancuerna 10kg</td>
+            <td>Pesas y Mancuernas</td>
+            <td>8</td>
+            <td>4</td>
+            <td>Área de Pesas</td>
+            <td><span class="badge disponible">Disponible</span></td>
+            <td>-</td>
+            <td>
+              <a href="#" class="editar">Editar</a> |
+              <a href="#" class="eliminar">Eliminar</a>
+            </td>
+          </tr>
+          <tr>
+            <td>003</td>
+            <td>Press de Banca</td>
+            <td>Equipos de Ejercicio</td>
+            <td>2</td>
+            <td>1</td>
+            <td>Zona Fuerza</td>
+            <td><span class="badge mantenimiento">En Mantenimiento</span></td>
+            <td>05/12/2024</td>
+            <td>
+              <a href="#" class="editar">Editar</a> |
+              <a href="#" class="eliminar">Eliminar</a>
+            </td>
+          </tr>
+          <tr>
+            <td>004</td>
+            <td>Proteína Whey</td>
+            <td>Suplementos</td>
+            <td>15</td>
+            <td>10</td>
+            <td>Mostrador</td>
+            <td><span class="badge disponible">Disponible</span></td>
+            <td>-</td>
+            <td>
+              <a href="#" class="editar">Editar</a> |
+              <a href="#" class="eliminar">Eliminar</a>
+            </td>
+          </tr>
+          <tr>
+            <td>005</td>
+            <td>Bicicleta Estática</td>
+            <td>Equipo Cardio</td>
+            <td>3</td>
+            <td>1</td>
+            <td>Zona Cardio</td>
+            <td><span class="badge reparacion">En Reparación</span></td>
+            <td>20/01/2025</td>
+            <td>
+              <a href="#" class="editar">Editar</a> |
+              <a href="#" class="eliminar">Eliminar</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+
+  <script src="VALIDACION/Gestion_inventario.js"></script>
+</body>
+</html>

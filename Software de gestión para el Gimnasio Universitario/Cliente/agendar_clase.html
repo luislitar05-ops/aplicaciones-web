@@ -1,0 +1,257 @@
+
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agendar Clases - Cliente Gimnasio ULEAM</title>
+  <link rel="stylesheet" href="CSS/agendar_clase.css">
+</head>
+
+<body>
+  <header class="encabezado">
+    <h1> Gimnasio ULEAM</h1>
+    <div class="usuario-info">
+      <span>Bienvenido, Juan Pérez
+      
+    </div>
+  </header>
+
+  <main class="contenido">
+    <!-- Filtros y Búsqueda -->
+    <section class="filtros-agenda">
+      <div class="filtros-superiores">
+        <div class="input-group">
+          <label for="fecha-busqueda">Seleccionar Fecha</label>
+          <input type="date" id="fecha-busqueda" name="fecha-busqueda">
+        </div>
+        <div class="input-group">
+          <label for="tipo-clase">Tipo de Clase</label>
+          <select id="tipo-clase" name="tipo-clase">
+            <option value="">Todas las clases</option>
+            <option value="spinning">Spinning</option>
+            <option value="yoga">Yoga</option>
+            <option value="crossfit">Cross Training</option>
+            <option value="zumba">Zumba</option>
+            <option value="pilates">Pilates</option>
+            <option value="boxeo">Boxeo</option>
+            <option value="personalizado">Entrenamiento Personalizado</option>
+          </select>
+        </div>
+        <div class="input-group">
+          <label for="instructor">Instructor</label>
+          <select id="instructor" name="instructor">
+            <option value="">Todos los instructores</option>
+            <option value="maria">María Gómez</option>
+            <option value="carlos">Carlos Ruiz</option>
+            <option value="luis">Luis Torres</option>
+            <option value="ana">Ana Mendoza</option>
+          </select>
+        </div>
+        <button type="button" class="btn-buscar">Buscar Clases</button>
+      </div>
+    </section>
+
+    <div class="contenedor-principal">
+      <!-- Calendario Semanal -->
+      <section class="seccion-calendario">
+        <div class="seccion-header">
+          <h2>Calendario Semanal</h2>
+          <div class="navegacion-semana">
+            <button class="btn-semana anterior">◀</button>
+            <span class="semana-actual">11 - 17 Noviembre, 2024</span>
+            <button class="btn-semana siguiente">▶</button>
+          </div>
+        </div>
+
+        <div class="calendario-semanal">
+          <div class="dias-semana">
+            <div class="dia">Lun<br>11</div>
+            <div class="dia">Mar<br>12</div>
+            <div class="dia">Mié<br>13</div>
+            <div class="dia">Jue<br>14</div>
+            <div class="dia">Vie<br>15</div>
+            <div class="dia">Sáb<br>16</div>
+            <div class="dia">Dom<br>17</div>
+          </div>
+
+          <div class="horarios-clases">
+            <!-- Horario 06:00 - 08:00 -->
+            <div class="franja-horaria">
+              <div class="hora-label">06:00 - 08:00</div>
+              <div class="clase-dia disponible">
+                <span class="tipo-clase">Spinning</span>
+                <span class="instructor">María Gómez</span>
+                <span class="cupos">8/12 cupos</span>
+                <button class="btn-reservar">Reservar</button>
+              </div>
+              <div class="clase-dia"></div>
+              <div class="clase-dia disponible">
+                <span class="tipo-clase">Yoga</span>
+                <span class="instructor">Carlos Ruiz</span>
+                <span class="cupos">5/15 cupos</span>
+                <button class="btn-reservar">Reservar</button>
+              </div>
+              <div class="clase-dia"></div>
+              <div class="clase-dia disponible">
+                <span class="tipo-clase">Cross Training</span>
+                <span class="instructor">Luis Torres</span>
+                <span class="cupos">3/10 cupos</span>
+                <button class="btn-reservar">Reservar</button>
+              </div>
+              <div class="clase-dia"></div>
+              <div class="clase-dia"></div>
+            </div>
+
+            <!-- Horario 08:00 - 10:00 -->
+            <div class="franja-horaria">
+              <div class="hora-label">08:00 - 10:00</div>
+              <div class="clase-dia"></div>
+              <div class="clase-dia disponible">
+                <span class="tipo-clase">Pilates</span>
+                <span class="instructor">Ana Mendoza</span>
+                <span class="cupos">6/8 cupos</span>
+                <button class="btn-reservar">Reservar</button>
+              </div>
+              <div class="clase-dia"></div>
+              <div class="clase-dia disponible">
+                <span class="tipo-clase">Zumba</span>
+                <span class="instructor">María Gómez</span>
+                <span class="cupos">12/20 cupos</span>
+                <button class="btn-reservar">Reservar</button>
+              </div>
+              <div class="clase-dia"></div>
+              <div class="clase-dia disponible">
+                <span class="tipo-clase">Boxeo</span>
+                <span class="instructor">Luis Torres</span>
+                <span class="cupos">4/8 cupos</span>
+                <button class="btn-reservar">Reservar</button>
+              </div>
+              <div class="clase-dia"></div>
+            </div>
+
+            <!-- Horario 16:00 - 18:00 -->
+            <div class="franja-horaria">
+              <div class="hora-label">16:00 - 18:00</div>
+              <div class="clase-dia disponible">
+                <span class="tipo-clase">Cross Training</span>
+                <span class="instructor">Luis Torres</span>
+                <span class="cupos">2/10 cupos</span>
+                <button class="btn-reservar">Reservar</button>
+              </div>
+              <div class="clase-dia"></div>
+              <div class="clase-dia disponible">
+                <span class="tipo-clase">Spinning</span>
+                <span class="instructor">Carlos Ruiz</span>
+                <span class="cupos">10/12 cupos</span>
+                <button class="btn-reservar">Reservar</button>
+              </div>
+              <div class="clase-dia"></div>
+              <div class="clase-dia disponible">
+                <span class="tipo-clase">Yoga</span>
+                <span class="instructor">Ana Mendoza</span>
+                <span class="cupos">8/15 cupos</span>
+                <button class="btn-reservar">Reservar</button>
+              </div>
+              <div class="clase-dia"></div>
+              <div class="clase-dia"></div>
+            </div>
+
+            <!-- Horario 18:00 - 20:00 -->
+            <div class="franja-horaria">
+              <div class="hora-label">18:00 - 20:00</div>
+              <div class="clase-dia"></div>
+              <div class="clase-dia disponible">
+                <span class="tipo-clase">Zumba</span>
+                <span class="instructor">María Gómez</span>
+                <span class="cupos">15/20 cupos</span>
+                <button class="btn-reservar">Reservar</button>
+              </div>
+              <div class="clase-dia"></div>
+              <div class="clase-dia disponible">
+                <span class="tipo-clase">Boxeo</span>
+                <span class="instructor">Luis Torres</span>
+                <span class="cupos">6/8 cupos</span>
+                <button class="btn-reservar">Reservar</button>
+              </div>
+              <div class="clase-dia"></div>
+              <div class="clase-dia disponible">
+                <span class="tipo-clase">Pilates</span>
+                <span class="instructor">Ana Mendoza</span>
+                <span class="cupos">3/8 cupos</span>
+                <button class="btn-reservar">Reservar</button>
+              </div>
+              <div class="clase-dia"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Panel Lateral - Mis Reservas y Entrenadores -->
+      <aside class="panel-lateral">
+        <!-- Mis Reservas Activas -->
+        <section class="seccion-reservas">
+          <div class="seccion-header">
+            <h3>Mis Reservas Activas</h3>
+          </div>
+          <div class="lista-reservas">
+            <div class="reserva-item">
+              <div class="reserva-info">
+                <h4>Spinning Avanzado</h4>
+                <p>📅 15 Nov - 08:00 AM</p>
+                <p>👤 Con: María Gómez</p>
+                <span class="estado-reserva confirmada">Confirmada</span>
+              </div>
+              <button class="btn-cancelar">Cancelar</button>
+            </div>
+            <div class="reserva-item">
+              <div class="reserva-info">
+                <h4>Yoga Terapéutico</h4>
+                <p>📅 16 Nov - 10:00 AM</p>
+                <p>👤 Con: Carlos Ruiz</p>
+                <span class="estado-reserva pendiente">Por confirmar</span>
+              </div>
+              <button class="btn-cancelar">Cancelar</button>
+            </div>
+            <div class="reserva-item">
+              <div class="reserva-info">
+                <h4>Cross Training</h4>
+                <p>📅 18 Nov - 07:00 AM</p>
+                <p>👤 Con: Luis Torres</p>
+                <span class="estado-reserva confirmada">Confirmada</span>
+              </div>
+              <button class="btn-cancelar">Cancelar</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Información Importante -->
+        <section class="seccion-informacion">
+          <div class="seccion-header">
+            <h3>Información Importante</h3>
+          </div>
+          <div class="lista-informacion">
+            <div class="info-item">
+              <span class="info-icono">⏰</span>
+              <p>Llega 10 minutos antes de tu clase</p>
+            </div>
+            <div class="info-item">
+              <span class="info-icono">❌</span>
+              <p>Cancelaciones con 2 horas de anticipación</p>
+            </div>
+            <div class="info-item">
+              <span class="info-icono">💧</span>
+              <p>Trae tu botella de agua y toalla</p>
+            </div>
+            <div class="info-item">
+              <span class="info-icono">📱</span>
+              <p>Recibirás recordatorio por WhatsApp</p>
+            </div>
+          </div>
+        </section>
+      </aside>
+    </div>
+  </main>
+<script src="VALIDACION/Agendar_clase.js"></script>
+</body>
+</html>
